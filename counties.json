@@ -1,0 +1,190 @@
+{
+    "0": {
+        "name" : "Mombasa",
+        "code" : "001"
+    },
+    "1": {
+        "name" : "Kwale",
+        "code" : "002"
+    },
+    "2": {
+        "name" : "Kilifi",
+        "code" : "003"
+    },
+    "3": {
+        "name" : "Tana River",
+        "code" : "004"
+    },
+    "4": {
+        "name" : "Lamu",
+        "code" : "005"
+    },
+    "5": {
+        "name" : "Taita Taveta",
+        "code" : "006"
+    },
+    "6": {
+        "name" : "Garissa",
+        "code" : "007"
+    },
+    "7": {
+        "name" : "Wajir",
+        "code" : "008"
+    },
+    "8": {
+        "name" : "Mandera",
+        "code" : "009"
+    },
+    "9": {
+        "name" : "Marsabit",
+        "code" : "010"
+    },
+    "10": {
+        "name" : "Isiolo",
+        "code" : "011"
+    },
+    "11": {
+        "name" : "Meru",
+        "code" : "012"
+    },
+    "12": {
+        "name" : "Tharaka Nithi",
+        "code" : "013"
+    },
+    "13": {
+        "name" : "Embu",
+        "code" : "014"
+    },
+    "14": {
+        "name" : "Kitui",
+        "code" : "015"
+    },
+    "15": {
+        "name" : "Machakos",
+        "code" : "016"
+    },
+    "16": {
+        "name" : "Makueni",
+        "code" : "017"
+    },
+    "17": {
+        "name" : "Nyandarua",
+        "code" : "018"
+    },
+    "18": {
+        "name" : "Nyeri",
+        "code" : "019"
+    },
+    "19": {
+        "name" : "Kirinyaga",
+        "code" : "020"
+    },
+    "20": {
+        "name" : "Murang'a",
+        "code" : "021"
+    },
+    "21": {
+        "name" : "Kiambu",
+        "code" : "022"
+    },
+    "22": {
+        "name" : "Turkana",
+        "code" : "023"
+    },
+    "23": {
+        "name" : "West Pokot",
+        "code" : "024"
+    },
+    "24": {
+        "name" : "Samburu",
+        "code" : "025"
+    },
+    "25": {
+        "name" : "Trans Nzoia",
+        "code" : "026"
+    },
+    "26": {
+        "name" : "Uasin Gishu",
+        "code" : "027"
+    },
+    "27": {
+        "name" : "Elgeyo Marakwet",
+        "code" : "028"
+    },
+    "28": {
+        "name" : "Nandi",
+        "code" : "029"
+    },
+    "29": {
+        "name" : "Baringo",
+        "code" : "030"
+    },
+    "30": {
+        "name" : "Laikipia",
+        "code" : "031"
+    },
+    "31": {
+        "name" : "Nakuru",
+        "code" : "032"
+    },
+    "32": {
+        "name" : "Narok",
+        "code" : "033"
+    },
+    "33": {
+        "name" : "Kajiado",
+        "code" : "34"
+    },
+    "34": {
+        "name" : "Kericho",
+        "code" : "035"
+    },
+    "35": {
+        "name" : "Bomet",
+        "code" : "036"
+    },
+    "36": {
+        "name" : "Kakamega",
+        "code" : "037"
+    },
+    "37": {
+        "name" : "Vihiga",
+        "code" : "038"
+    },
+    "38": {
+        "name" : "Bungoma",
+        "code" : "039"
+    },
+    "39": {
+        "name" : "Busia",
+        "code" : "040"
+    },
+    "40": {
+        "name" : "Siaya",
+        "code" : "041"
+    },
+    "41": {
+        "name" : "Kisumu",
+        "code" : "042"
+    },
+    "42": {
+        "name" : "Homa Bay",
+        "code" : "043"
+    },
+    "43": {
+        "name" : "Migori",
+        "code" : "044"
+    },
+    "44": {
+        "name" : "Kisii",
+        "code" : "045"
+    },
+    "45": {
+        "name" : "Nyamira",
+        "code" : "046"
+    },
+    "46": {
+        "name" : "Nairobi City",
+        "code" : "047"
+    }
+}
