@@ -1,0 +1,19 @@
+{
+  "name": "kenyan-counties-api",
+  "version": "1.0.0",
+  "description": "An API providing information about kenyan counties",
+  "main": "server.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "author": "Victor Mutethia",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
