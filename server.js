@@ -1,20 +1,21 @@
 const express = require("express");
 const connectDb = require("./config/dbConnection");
 const errorHandler = require("./middleware/errorHandler");
-const countyRoutes = require('./routes/countyRoute')
-const dotenv = require('dotenv').config()
+const countyRoutes = require("./routes/countyRoute");
+const dotenv = require("dotenv").config();
 
 const app = express();
 
-app.use(errorHandler)
-connectDb()
+app.use(errorHandler);
+connectDb();
 
-app.use(express.json())
-app.use('/api/counties',countyRoutes)
-
+app.use(express.json());
+app.use("/api/counties", countyRoutes);
 
 app.all("/", (req, res) => {
-  res.send("Welcome to counties API");
+  res.send(
+    "Welcome to counties API\n\n Routes:(/api/counties),\n(/api/counties/code)\ne.g /api/counties/001 - Mombasa"
+  );
   console.log("Welcome to counties' API");
 });
 
