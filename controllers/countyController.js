@@ -29,4 +29,24 @@ const getCountyByCode = async (req, res, next) => {
   }
 };
 
-module.exports = { getCounties, getCountyByCode };
+//@desc Add a county
+//@route POST /api/counties/
+//@access public
+const addCounty = async (req, res, next) => {
+  try {
+    const { name, code, flagUrl } = req.body;
+    if (!name || !code || !flagUrl) {
+      res.status(400).send("All fields are required");
+    }
+    const county = await Counties.create({
+      name,
+      code,
+      flagUrl,
+    });
+    res.send(county);
+  } catch (err) {
+    next(err);
+  }
+}
+
+module.exports = { getCounties, getCountyByCode ,addCounty };
