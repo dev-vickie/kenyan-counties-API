@@ -1,24 +1,17 @@
-const e = require("express");
 const express = require("express");
+const getCounties = require("../controllers/countyController");
 const Counties = require("../models/countyModel");
 
 const route = express.Router();
 
-route.get("/", async (req, res, next) => {
-  try {
-    const counties = await Counties.find();
-    res.status(200).json(counties);
-  } catch (error) {
-    next(error);
-  }
-});
+route.get("/",getCounties );
 
-route.get("/:code",async (req, res, next) => {
+route.get("/:code", async (req, res, next) => {
   try {
     const code = req.params.code;
-    const county =await Counties.findOne({code});
+    const county = await Counties.findOne({ code });
     if (!county) {
-      res.status(400).send("County not found");
+      res.status(400).send("County with that code does not exist");
     }
     res.status(200).json(county);
   } catch (err) {
