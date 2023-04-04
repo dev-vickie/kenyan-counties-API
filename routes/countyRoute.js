@@ -1,23 +1,12 @@
 const express = require("express");
-const getCounties = require("../controllers/countyController");
+const {getCounties,getCountyByCode} = require("../controllers/countyController");
 const Counties = require("../models/countyModel");
 
 const route = express.Router();
 
 route.get("/",getCounties );
 
-route.get("/:code", async (req, res, next) => {
-  try {
-    const code = req.params.code;
-    const county = await Counties.findOne({ code });
-    if (!county) {
-      res.status(400).send("County with that code does not exist");
-    }
-    res.status(200).json(county);
-  } catch (err) {
-    next(err);
-  }
-});
+route.get("/:code", getCountyByCode);
 
 route.post("/add", async (req, res, next) => {
   try {
