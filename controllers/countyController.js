@@ -1,11 +1,11 @@
 const Counties = require("../models/countyModel");
 
-//@desc Get all counties
+//@desc Get all counties sorted by their county codes
 //@route GET /api/counties
 //@access public
 const getCounties = async (req, res, next) => {
   try {
-    const counties = await Counties.find();
+    const counties = await Counties.find().sort({ code: 1 });
     res.status(200).json(counties);
   } catch (error) {
     next(error);
@@ -47,6 +47,6 @@ const addCounty = async (req, res, next) => {
   } catch (err) {
     next(err);
   }
-}
+};
 
-module.exports = { getCounties, getCountyByCode ,addCounty };
+module.exports = { getCounties, getCountyByCode, addCounty };
