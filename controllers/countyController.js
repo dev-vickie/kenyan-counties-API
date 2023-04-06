@@ -74,6 +74,9 @@ const addGovernor = async (req, res, next) => {
   }
 };
 
+//@desc Get county governor per code
+//@route GET /api/counties/:code/governor
+//@access public
 const getGovernor = async (req, res, next) => {
   const code = req.params.code;
   try {
