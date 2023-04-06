@@ -74,4 +74,27 @@ const addGovernor = async (req, res, next) => {
   }
 };
 
-module.exports = { getCounties, getCountyByCode, addCounty, addGovernor };
+const getGovernor = async (req, res, next) => {
+  const code = req.params.code;
+  try {
+    if (!code) {
+      res.status(400).send("County code must not be null");
+    } else {
+      const searchedCounty = await Counties.findOne({ code: code });
+      if (!searchedCounty) {
+        res.status(404).send("County not found");
+      } else {
+        res.status(200).send(searchedCounty.governor);
+      }
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+module.exports = {
+  getCounties,
+  getCountyByCode,
+  addCounty,
+  addGovernor,
+  getGovernor,
+};
