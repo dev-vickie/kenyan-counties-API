@@ -14,6 +14,10 @@ const countySchema = mongoose.Schema({
     type: String,
     required: [true, "County flag is required"],
   },
+  governor:{
+    type : String,
+    required : [true,"County governor is required"]
+  }
 });
 
 module.exports = mongoose.model("counties", countySchema);

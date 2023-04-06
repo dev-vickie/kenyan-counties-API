@@ -1,3 +1,4 @@
+const { count } = require("../models/countyModel");
 const Counties = require("../models/countyModel");
 
 //@desc Get all counties sorted by their county codes
@@ -49,4 +50,28 @@ const addCounty = async (req, res, next) => {
   }
 };
 
-module.exports = { getCounties, getCountyByCode, addCounty };
+//@desc Add a county governor per code
+//@route PUT /api/counties/:code/governor
+//@access public
+const addGovernor = async (req, res, next) => {
+  try {
+    const code = req.params.code;
+    const { governor } = req.body;
+    if (!code) {
+      res.status(400).send("County code must be provided");
+    } else {
+      const searchCounty = await Counties.findOne({ code: code });
+      if (!searchCounty) {
+        res.status(400).send("County with that code does not exist");
+      } else {
+        searchCounty.governor = governor;
+        await searchCounty.save();
+        res.status(200).send(`${code} governor added successfully`);
+      }
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
+module.exports = { getCounties, getCountyByCode, addCounty, addGovernor };

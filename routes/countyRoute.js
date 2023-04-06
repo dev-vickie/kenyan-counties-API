@@ -3,6 +3,7 @@ const {
   getCounties,
   getCountyByCode,
   addCounty,
+  addGovernor,
 } = require("../controllers/countyController");
 const Counties = require("../models/countyModel");
 
@@ -13,5 +14,7 @@ route.get("/", getCounties);
 route.get("/:code", getCountyByCode);
 
 route.post("/add", addCounty);
+
+route.put("/:code/governor", addGovernor);
 
 module.exports = route;
