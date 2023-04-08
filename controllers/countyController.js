@@ -1,4 +1,3 @@
-const { count } = require("../models/countyModel");
 const Counties = require("../models/countyModel");
 
 //@desc Get all counties sorted by their county codes
