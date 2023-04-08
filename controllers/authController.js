@@ -1,5 +1,7 @@
 const User = require("../models/userModel");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+
 //@desc register a user
 //@route POST /api/auth/register
 //@access public
@@ -18,18 +20,16 @@ const register = async (req, res, next) => {
 
     console.log("HashedPassword :", hashedPassword);
     const user = await User.create({
-        name,
-        email,
-        password:hashedPassword
+      name,
+      email,
+      password: hashedPassword,
     });
     console.log("User created:", user);
-    if(user){
-        res.status(201).json({_id : user.id,email:user.email})
-    }else
-    {
-        res.status(400).json({message:"Invalid user data"})
+    if (user) {
+      res.status(201).json({ _id: user.id, email: user.email });
+    } else {
+      res.status(400).json({ message: "Invalid user data" });
     }
-
   } catch (err) {
     next(err);
   }
@@ -39,7 +39,28 @@ const register = async (req, res, next) => {
 //@route POST /api/auth/login
 //@access public
 const login = async (req, res) => {
-  res.status(200).json({ message: "logging in user" });
+  const { email, password } = req.body;
+  if (!email || !password) {
+    return res.status(400).json({ message: "Please enter all fields" });
+  }
+  const userExists = await User.findOne({ email });
+  if (userExists && (await bcrypt.compare(password, userExists.password))) {
+    const accessToken = jwt.sign(
+      {
+        user: {
+          name: userExists.name,
+          email: userExists.email,
+          id: userExists._id,
+        },
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: "2m" },
+    );
+    return res.status(200).json({ accessToken : accessToken});
+  } else {
+    return res.status(400).json({ message: "Invalid credentials" });
+  }
+
 };
 
 //@desc log out user
