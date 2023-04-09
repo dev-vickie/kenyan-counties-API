@@ -6,6 +6,7 @@ const {
   logout,
   getCurrentUser,
 } = require("../controllers/authController");
+const validateToken = require("../middleware/validateAuthToken");
 
 route.post("/register", register);
 
@@ -13,6 +14,6 @@ route.post("/login", login);
 
 route.post("/logout", logout);
 
-route.get("/current", getCurrentUser);
+route.get("/current",validateToken, getCurrentUser);
 
 module.exports = route;

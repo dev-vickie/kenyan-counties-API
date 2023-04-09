@@ -54,11 +54,11 @@ const login = async (req, res) => {
         },
       },
       process.env.JWT_SECRET,
-      { expiresIn: "2m" },
+      { expiresIn: "1m" },
     );
     return res.status(200).json({ accessToken : accessToken});
   } else {
-    return res.status(400).json({ message: "Invalid credentials" });
+    return res.status(400).json({ message: "Incorrect email or password" });
   }
 }catch (err) {
     next(err);
@@ -76,7 +76,7 @@ const logout = async (req, res) => {
 //@route GET /api/auth/current
 //@access private
 const getCurrentUser = async (req, res) => {
-  res.status(200).json({ message: "getting user" });
+  res.status(200).json({ message: "getting current user" });
 };
 
 module.exports = { register, login, logout, getCurrentUser };
