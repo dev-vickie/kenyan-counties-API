@@ -3,6 +3,7 @@ const connectDb = require("./config/dbConnection");
 const errorHandler = require("./middleware/errorHandler");
 const countyRoutes = require("./routes/countyRoute");
 const dotenv = require("dotenv").config();
+const authRoutes = require("./routes/authRoute");
 
 const app = express();
 
@@ -11,6 +12,7 @@ connectDb();
 
 app.use(express.json());
 app.use("/api/counties", countyRoutes);
+app.use("/api/auth", authRoutes)
 
 app.all("/", (req, res) => {
   res.send(
